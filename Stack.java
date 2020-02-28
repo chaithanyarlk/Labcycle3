@@ -8,12 +8,12 @@ class Stack{
      //this will create the array if this for second time expansion then expansion has to be sent frompush
     static  public void init (int max1){
 
-          
+
           max=max1;
           //System.out.println(max+ " this the max val initialized to");
           top=-1;
 
-          
+
      }
 
      static public int[] push (int arr[],int data){
@@ -31,7 +31,7 @@ class Stack{
                arr[top]=data;
                max=max*2;
                //System.out.println(max+" this is the max val");
-               
+
 
 
           //  init(temp, 2*max, 1);
@@ -40,14 +40,14 @@ class Stack{
           else{
                //System.out.println("came to else part");
                if(top<max-1){
-                    
+
                     top++;
                    // System.out.println(top+ "  the value of top");
                     arr[top]=data;
                }
           }
           return arr;
-          
+
      }
 
      static int pop (int arr[]){
@@ -63,7 +63,10 @@ class Stack{
      }
 
      static public void display(int arr[]){
-          for(int i=0;i<=top;i++){
+       if(top==-1)
+{      System.out.println("Nothing is there to Display so insert something to see here!");
+
+}          for(int i=0;i<=top;i++){
                System.out.println(arr[i]);
           }
      }
@@ -72,6 +75,7 @@ class Stack{
           int m;
           int data;
           int choice;
+          int ret;
           boolean temp = true;
           Scanner s=new Scanner(System.in);
           System.out.println("Enter the initial size of the stack");
@@ -92,7 +96,11 @@ class Stack{
                     arr= push(arr, data);
                     break;
                     case 2:
-                    System.out.println(pop(arr)+ " this is the poped item");
+                    ret=pop(arr);
+                    if(ret!=-1)
+                    System.out.println(ret+ " this is the poped item");
+                    else
+                    System.out.println("Your stack is Empty!");
                     break;
                     case 3:
                     display(arr);
@@ -102,7 +110,7 @@ class Stack{
                     break;
                     default:
                     System.out.println("Please eneter a proper value");
-                    
+
                }
 
           }
