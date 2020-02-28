@@ -14,12 +14,16 @@ class Lottery{
      }
      static public int check(int num,int data){
           int rem=0;
+          int data1=0;
+          while(data!=0){
+               data1=data%10;
+               data=data/10;
           while(num!=0){
                rem=num%10;
-               if(rem==data)
+               if(rem==data1)
                return 1;
                num=num/10;
-          }
+          }}
           return 0;
      }
 
@@ -27,7 +31,7 @@ class Lottery{
           int data;
           int num=(int)(10+((Math.random())*89));
           System.out.println("Check your luck in the Lottery by entering a number (2 digit only)");
-          //System.out.println(num);
+          System.out.println(num);
           Scanner s= new Scanner(System.in);
           data=s.nextInt();
           if(data==num){
