@@ -12,13 +12,17 @@ class Queue{
           max=max1;
      }
 
-     static public int []enQueue (int arr[],int data){
+     static public int [] enQueue (int arr[],int data){
+          System.out.println("this is the value of max "+max);
           if(rear==max-1){
+               System.out.println("Entered if part");
 
                int temp[]= new int[2*max];
-               max=2*max;
-               for(int i=0;i<rear;i++){
+               max=2*(max);
+               System.out.println("this is the value of new max "+max);
+               for(int i=0;i<=rear;i++){
                     temp[i]=arr[i];
+                    System.out.println("the value of temp "+temp[i]);
 
                }
                arr=temp;
@@ -30,6 +34,8 @@ class Queue{
           }
           rear++;
           arr[rear]=data;
+          System.out.println("this is the rear "+ rear);
+          System.out.println("this is the front "+front);
           return (arr);
           
 
@@ -59,21 +65,25 @@ class Queue{
 
      }
      static public void display(int arr[]){
-          if(front!=-1 && rear!=-1)
+          if(front!=-1 && rear!=-1){
           for(int i=front;i<=rear;i++){
                System.out.println(arr[i]);
-          }
+          }}
      }
 
 
-     static void main(String args[]){
+     static public  void main(String args[]){
           int choice;
           int arr[] = new int [1];
           //basic initialization of the object of array class
           int data;
           boolean temp=true;
           int ret;
+          
+          
           Scanner s=new Scanner(System.in);
+          
+          init(1);
           while(temp){
                System.out.println("see the choice list before starting");
                System.out.println("     press 1 to enqueue elements ");
