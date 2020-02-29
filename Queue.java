@@ -13,16 +13,16 @@ class Queue{
      }
 
      static public int [] enQueue (int arr[],int data){
-          System.out.println("this is the value of max "+max);
+       
           if(rear==max-1){
-               System.out.println("Entered if part");
+              
 
                int temp[]= new int[2*max];
                max=2*(max);
-               System.out.println("this is the value of new max "+max);
+            
                for(int i=0;i<=rear;i++){
                     temp[i]=arr[i];
-                    System.out.println("the value of temp "+temp[i]);
+                    
 
                }
                arr=temp;
