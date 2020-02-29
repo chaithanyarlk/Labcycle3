@@ -43,7 +43,7 @@ class Employee{
                System.out.println("please enetr the emeployee id");
                arr[i][0]=s.nextInt();
                for(int j=1;j<8;j++){
-                    System.out.println("Enter the emeployee details");
+                    System.out.println("Enter the emeployee details of day "+j);
                     arr[i][j]=s.nextInt();
                }
           }
