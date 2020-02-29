@@ -3,7 +3,7 @@ package list;
 
 class LinkedList 
 { 
-	static  private Node head; 
+	public   Node head; 
 
 	
 	class Node 
@@ -17,7 +17,7 @@ class LinkedList
      } 
      
      
-     static public void push(int data) 
+     public void addFirst(int data) 
      { 
           
           Node newnode = new Node(data); 
@@ -25,7 +25,7 @@ class LinkedList
           head = newnode; 
      } 
 
-     static Node removeLast(Node head) 
+     public Node removeLast(Node head) 
     { 
         if (head == null) 
             return null; 
@@ -45,7 +45,7 @@ class LinkedList
         return head; 
     } 
 
-    static public Node objectAt(int n){
+    public Node objectAt(int n){
          Node temp=head;
          for( int i=1;i<=n&&temp!=null;i++){
               temp=temp.next;
@@ -56,13 +56,13 @@ class LinkedList
 
 
     }
-    static public Node firstObject(){
+    public Node firstObject(Node head){
          
          
          return head;
     }
 
-    static public int indexOfObject(Node obj){
+    public int indexOfObject(Node obj){
          if(head==null)
          return -1;
          int i=1;
@@ -76,13 +76,36 @@ class LinkedList
          }
          return -1;
     }
-
-}
-
-public class Llist{
-     static public void main(String args[]){
-          
+    public void printList() 
+    { 
+        Node tnode = head; 
+        while (tnode != null) 
+        { 
+            System.out.print(tnode.data+" "); 
+            tnode = tnode.next; 
+        } 
+    } 
+    public static void main(String args[]){
+     LinkedList llist = new LinkedList(); 
+     for( int i=1;i<10;i++){
+          llist.addFirst(i);
      }
+     llist.printList();
+     System.out.println();
+     llist.removeLast(llist.head);
+     llist.printList();
+     System.out.println();
+     Node temp=llist.firstObject(llist.head);
+     if(temp!=null){
+          System.out.println(temp.data);
+     }
+     int dat= llist.indexOfObject(temp);
+if(dat!=-1){
+     System.out.println(dat);
+}
+    }
+
+    
 
 }
 
